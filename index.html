@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Netflix show🔥</title>
+        <link rel="shortcut icon" type="image/x-icon" href="./image/logo.png" />
+        <meta charset="utf-8" />
+        <style>
+            #wrap{
+                min-width: 1024px;
+                max-width: 1920px;
+                margin: 0px auto;
+            }
+            .clearfix::after{
+                content: "";
+                clear:both;
+                display: table;
+            }
+            @font-face {
+                src: url(./Noto_Sans_KR/NotoSansKR-Bold.otf);
+                font-family:notoB;
+            }
+            @font-face {
+                src: url(./Noto_Sans_KR/NotoSansKR-Regular.otf);
+                font-family:notoR;
+            }
+            @font-face {
+                src: url(./TTF/SB\ 어그로\ L.ttf);
+                font-family:ugro;
+            }
+            header{
+                background-color: white;
+                padding: 16px 0px 16px 35px;
+            }
+            header>h1{
+                float: left;
+                margin: 0px;
+                font-family: notoB;
+                color: black;
+            }
+            header>ul{
+                float: right;
+                margin: 25px 0px 5px 0px;
+                padding: 0px 20px;
+            }
+            header>ul>li{
+                float: left;
+                list-style: none;
+                padding: 0px 30px; 
+                border-right: solid 2px #C70039;
+                font-family: notoB;
+                font-size: 13px;
+                color: black;
+            }
+            header>ul>li:last-child{
+                border: none;
+            }
+            header a{
+                text-decoration: none;
+            }
+            header a:link{
+                color: black;
+            }
+            header ul li a:hover{
+                color: #C70039;
+            }
+            header a:visited{
+                color: black;
+            } 
+            /* ------ header ------- */
+            body{
+                text-align: center;
+                background-color: #393939;
+                color: white;
+                font-family: notoR;
+                font-size: 12px;
+                line-height: 200%;
+            }
+            .cont{
+                background:black;
+                overflow: hidden;
+            }
+            .cont img{
+                opacity: 50%;
+            }
+            .cont .img{
+                overflow: hidden;
+            }
+            .cont img:hover{
+                transform: scale(1.1);
+                transition: all .45s;
+                box-shadow: 0px 0px 0px;
+                opacity: 1;
+            }
+            .cont h3{
+                font-family: ugro;
+                font-size: 17px;
+                margin-bottom: 30px;
+                color: #F33333;
+            }
+            
+            .cont1, .cont2, .cont3, .cont4{
+                float: left;
+                overflow: hidden;
+                display: block;
+                width: 18%;
+                padding: 30px 50px;
+                margin: 80px 0px 120px 0px; 
+                border-right: solid 1.5px white;
+            }
+            
+            .cont4{
+                border: none;
+            }
+            .link{
+                margin: 20px 0px;
+            }
+            .link a{
+                border: solid 1.5px white;
+                border-radius: 14px / 14px;
+                font-size: 12px;
+                font-family: notoR;
+                padding: 5px 13px;
+                text-decoration: none;
+            }
+            .link a:visited{
+                color: white;
+            }
+            .link a:hover{
+                color: #F33333;
+                border: solid 1.5px #F33333;
+                background: black;
+            }
+            /* ------ body ------- */
+            footer{
+                background-color: #1D1D1D;
+                color: #9D9D9D;
+                padding: 10px 0px 20px 20px;
+            }
+            footer #f_left{
+                float: left;
+                padding: 10px 0px;
+                text-align: left;
+                font-family: notoR;
+                font-size: 11px;
+            }
+            #f_left P{
+                margin: 0px;
+            }
+            footer ul{
+                padding: 0px 0px;
+                margin: 5px 0px 0px 0px;
+            }
+            footer ul>li{
+                float: left;
+                margin-right: 10px;
+                list-style: none;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header class="clearfix">
+                <h1 class="header_content"><a href="./index.html"><img src="./image/logo2.png" height="80px"/></a></h1>
+                <ul class="header_content clearfix">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./layout1.html">Layout1</a></li>
+                    <li><a href="./layout2.html">Layout2</a></li>
+                    <li><a href="./layout3.html">Layout3</a></li>
+                    <li><a href="./layout_sample.html">Free Layout</a></li>
+                </ul>
+            </header>
+            <div class="cont">
+                <section>
+                    <div class="cont1">
+                        <h3>레이아웃1</h3>
+                        <div class="img"><a href="./layout1.html"><img src="./image/s1.png" height="140px" /></a></div>
+                        <div class="long_line"></div>
+                        <p>
+                            각각 다른 section 설정, 두 개의 div 같은 라인 배치
+                        </p>
+                        <div class="long_line"></div>
+                        <div class="link"><a href="./layout1.html">보러가기 ></a></div>
+                    </div>
+                </section>
+                <section>
+                    <div class="cont2">
+                        <h3>레이아웃2</h3>
+                        <div class="img"><a href="./layout2.html"><img src="./image/s2.jpg" height="140px" /></a></div>
+                        <div class="long_line"></div>
+                        <p>
+                            이미지, 텍스트를 겹쳐 올리고 정한 너비에 맞춘 이미지
+                        </p>
+                        <div class="long_line"></div>
+                        <div class="link"><a href="./layout2.html">보러가기 ></a></div>
+                    </div>
+                </section>
+                <section >
+                    <div class="cont3">
+                        <h3>레이아웃3</h3>
+                        <div class="img"><a href="./layout3.html"><img src="./image/s3.png" height="140px" /></a></div>
+                        <div class="long_line"></div>
+                        <p>
+                            이미지와 텍스트의 relative, absolute 포지션
+                        </p>
+                        <div class="long_line"></div>
+                        <div class="link"><a href="./layout3.html">보러가기 ></a></div>
+                    </div>
+                </section>
+                <section class="clearfix">
+                    <div class="cont4">
+                        <h3>자유 콘텐츠</h3>
+                        <div class="img"><a href="./layout_sample.html"><img src="./image/s4.png" height="140px" /></a></div>
+                        <div class="long_line"></div>
+                        <p>
+                            자유롭게 주제를 정하여 새롭게 만들어 본 페이지
+                        </p>
+                        <div class="long_line"></div>
+                        <div class="link"><a href="./layout_sample.html">보러가기 ></a></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <footer class="clearfix">
+            <div id="f_left">
+                <img src="" /> 
+                <p>CONTACT</p>
+                <ul class="clearfix">
+                    <li><img src="./image/icon1.png" height="20px" /></li>
+                    <li><img src="./image/icon2.png" height="17px" /></li>
+                    <li><img src="./image/icon3.png" height="18px" /></li>
+                </ul>
+                <p>ⓒ YoonA Kim. All Rights Reserved</p>
+                <p>the loges in the design are the property of their 
+                    respective owners/copyright holders.</p>
+            </div>
+        </footer>
+    </body>
+</html>

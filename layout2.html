@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>레이아웃2</title>
+        <meta charset="utf-8" />
+        <style>
+            #wrap{
+                min-width: 760px;
+                max-width: 1920px;
+                margin: 0px auto;
+            }
+            body{
+                text-align: center;
+            }
+            header{
+                background-color: #02918c;
+                color: white;
+                padding: 0px 50px;
+            }
+            header h1 span{
+                color: #cfc91e;
+            }
+            header li{
+                float: left;
+                list-style: none;
+                padding: 0px 10px;
+            }
+            header li a{
+                text-decoration: none;
+            }
+            header h1{
+                float: left;
+                background-color: coral;
+            }
+            header>div{
+                float: left;
+                width: calc(100% - 145px - 503px); /* 왼쪽 myfolio 크기 nav 크기 빼기 */
+            }
+            header>div>div{
+                width: 20px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            header ul{
+                float: right;
+                margin: 33px 0px;
+                background-color: violet;
+            }
+            .clearfix::after{ /* li 요소만 적용시킴, ul이 다시 li를 자식개체로 감싸게 됨 */
+                content: "";
+                clear:both; /* float 해체: 양쪽 */
+                display: table;
+            }
+            #main_visual{
+                background-color: black; /* 이미지 이외의 부분 */
+                background-image: url("layout2_image/layout2_visual.jpg");
+                background-repeat: no-repeat; 
+                /* repeat, no-repeat, repeat-x(x축 가로만 반복), repeat-y(y축 세로만 반복*/
+                background-position: 100px 200px; /* 좌우, 상하 (x,y) 위치 픽셀만큼 이동 */
+                background-position: 50% 50%; /* x, y */
+                background-size: 500px 200px;
+                background-size: 200px auto;
+                background-size: auto 500px;
+                background-size: 100% auto;
+                background-size: contain; /* 쏙 들어가도록 */
+                background-size: cover; /* 씌워지도록, 안에 있는 공간 모두 커버하여 배경색 보이지 않음 */
+                color: white;
+                padding: 200px 100px;
+            }
+            #main_visual p{ 
+                margin: 0px; /* 크롬 기본 마진 삭제 */
+            }
+            #main_visual p:nth-child(1){ 
+                font-size: 30px;
+            }
+            #main_visual p:nth-child(3){ /* 메인 비주얼 안에서 p는 3번쨰 아이이기 때문에 2는 적용x */
+                font-size: 20px;
+            }
+            #main_visual h2{
+                font-size: 70px;
+                letter-spacing: 20px;
+                margin: 0px;
+            }
+            #main_visual img{
+                margin-top: 150px;
+            }
+            section h3{
+                color: #02918c;
+                font-size: 40px;
+            }
+            section p{
+                color: #444;
+                width: 70%;
+                margin: 0px auto; /* 남는 좌우 여백 자동 배정 */
+            }
+            section li{
+                float: left;
+                list-style: none;
+                width: 25%; /* 4개의 목록 같은 비율로 나누어지게 1/4 비율 */   
+            }
+            #content1 li{   
+                width: calc(25% - 1px - 25px - 25px); /* 합쳐서 -51px도 가능, 숫자 따로 쓰는 것 지향 */
+                border-right: solid 1px #bbb;
+                padding: 25px;
+            }
+            #content1 li:last-child{
+                border: none;
+            }
+            section ul{
+                padding: 0px;
+            }
+            section dd{
+                margin: 0px;
+            }
+            #content2 img{
+                width: 100%; 
+                display: block; /* inline */
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header class="clearfix">
+                <h1>MY<span>FOLIO</span></h1>
+                <ul class="clearfix">
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="./layout1.html">LAYOUT1</a></li>
+                    <li><a href="./layout2.html">LAYOUT2</a></li>
+                    <li><a href="./layout3.html">LAYOUT3</a></li>
+                    <li><a href="./layout_sample.html">FREE LAYOUT</a></li>
+                </ul>
+            </header>
+            <header class="clearfix">
+                <h1>MY<span>FOLIO</span></h1>
+                <div>
+                    <div>?</div>
+                </div>
+                <ul class="clearfix">
+                    <li>HOME</li>
+                    <li>ABOUT ME</li>
+                    <li>SERVICES</li>
+                    <li>MY WORK</li>
+                    <li>CONTACT ME</li>
+                </ul>
+            </header>
+            <div id="main_visual">
+                <p>Lorem ipsum dolor sit iusmod tempor</p>
+                <h2>incididunt bore</h2>
+                <p>Orem ipsum dolor sit amet, consectetur</p>
+                <img src="./layout2_image/layout2_button.jpg" />
+            </div>
+            <section id="content1">
+                <h3>ABOUT ME</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat duis aute irure dolor.
+                </p>
+                <ul class="clearfix">
+                    <li>
+                        <img src="./layout2_image/layout2_icon1.jpg" />
+                        <dl>
+                            <dt>Title goes here</dt>
+                            <dd>onsectetur adipisicing elit, sedo eiusmod tempor 
+                                incidi et dolorerserss eerhfre mag.</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="./layout2_image/layout2_icon2.jpg" />
+                        <dl>
+                            <dt>Title goes here</dt>
+                            <dd>onsectetur adipisicing elit, sedo eiusmod tempor 
+                                incidi et dolorerserss eerhfre mag.</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="./layout2_image/layout2_icon3.jpg" />
+                        <dl>
+                            <dt>Title goes here</dt>
+                            <dd>onsectetur adipisicing elit, sedo eiusmod tempor 
+                                incidi et dolorerserss eerhfre mag.</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="./layout2_image/layout2_icon4.jpg" />
+                        <dl>
+                            <dt>Title goes here</dt>
+                            <dd>onsectetur adipisicing elit, sedo eiusmod tempor 
+                                incidi et dolorerserss eerhfre mag.</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </section>
+            <section id="content2">
+                <h3>MY WORK</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.
+                </p>
+                <ul>
+                    <li><img src="./layout2_image/layout2_pic1.jpg" /></li>
+                    <li><img src="./layout2_image/layout2_pic2.jpg" /></li>
+                    <li><img src="./layout2_image/layout2_pic3.jpg" /></li>
+                    <li><img src="./layout2_image/layout2_pic4.jpg" /></li>
+                    <li><img src="./layout2_image/layout2_pic5.jpg" /></li>
+                    <li><img src="./layout2_image/layout2_pic6.jpg" /></li>
+                    <li><img src="./layout2_image/layout2_pic7.jpg" /></li>
+                    <li><img src="./layout2_image/layout2_pic8.jpg" /></li>
+                </ul>
+            </section>
+        </div>
+    </body>
+</html>

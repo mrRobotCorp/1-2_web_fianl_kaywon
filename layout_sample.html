@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Netflix show🔥: You must watch</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./image/logo.png" />
+    <meta charset="utf-8" />
+    <style>
+        #wrap {
+            min-width: 1024px;
+            max-width: 1920px;
+            margin: 0px auto;
+        }
+
+        @font-face {
+            src: url(./Noto_Sans_KR/NotoSansKR-Bold.otf);
+            font-family: notoB;
+        }
+
+        @font-face {
+            src: url(./Noto_Sans_KR/NotoSansKR-Regular.otf);
+            font-family: notoR;
+        }
+
+        @font-face {
+            src: url(./Noto_Sans_KR/NotoSansKR-Thin.otf);
+            font-family: notoT;
+        }
+
+        @font-face {
+            src: url(./TTF/SB\ 어그로\ L.ttf);
+            font-family: ugro;
+        }
+
+        @font-face {
+            src: url(./TTF/SB\ 어그로\ M.ttf);
+            font-family: ugroB;
+        }
+
+        body {
+            text-align: center;
+            background-color: #393939;
+            color: white;
+            font-family: notoR;
+            font-size: 14px;
+            line-height: 200%;
+        }
+
+        header {
+            background-color: white;
+            padding: 16px 0px 16px 35px;
+        }
+
+        header>h1 {
+            float: left;
+            margin: 0px;
+            font-family: notoB;
+            color: black;
+        }
+
+        header>ul {
+            float: right;
+            margin: 25px 0px 5px 0px;
+            padding: 0px 20px;
+        }
+
+        header>ul>li {
+            float: left;
+            list-style: none;
+            padding: 0px 30px;
+            border-right: solid 2px #C70039;
+            font-family: notoB;
+            font-size: 13px;
+            color: black;
+        }
+
+        header>ul>li:last-child {
+            border: none;
+        }
+
+        header a {
+            text-decoration: none;
+        }
+
+        header a:link {
+            color: black;
+        }
+
+        header ul li a:hover {
+            color: #C70039;
+        }
+
+        header a:visited {
+            color: black;
+        }
+
+        /* -------header------- */
+        nav {
+            margin: 0px auto;
+
+        }
+
+        nav>img {
+            float: left;
+        }
+
+        nav a {
+            text-decoration: none;
+        }
+
+        nav ul>li>a:visited {
+            color: white;
+        }
+
+        nav>ul>li {
+            list-style: none;
+            padding: 12px 15px;
+            border-bottom: solid 2px #C70039;
+            font-family: notoR;
+            font-size: 13px;
+        }
+
+        nav>ul>li:last-child {
+            border: none;
+        }
+
+        nav ul {
+            float: right;
+            margin: 20px 40px;
+            padding: 0px 0px;
+            border: solid 2px #C70039;
+            border-radius: 14px / 14px;
+        }
+
+        #pixlist {
+            position: fixed;
+            background-color: #393939;
+            top: 120px;
+            right: 0px;
+        }
+
+        #pixlist a:hover {
+            color: #F33333;
+        }
+
+        #pixlist a:link {
+            color: white;
+        }
+
+        /* -------nav------- */
+        #content section:nth-child(1) {
+            margin: 0px;
+            height: 700px;
+            background-image: url(./image/netflix.gif);
+        }
+
+        #content #net>dl {
+            float: right;
+            padding-top: 250px;
+            width: 450px;
+            margin-right: 120px;
+        }
+
+        section #net dt {
+            font-family: ugroB;
+            font-size: 18px;
+            color: #F33333;
+        }
+
+        section #net dd {
+            font-size: 14px;
+            font-family: notoR;
+            margin-left: 0px;
+            letter-spacing: 1px;
+            padding: 20px 0px 30px 0px;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        #content section dl dt a {
+            text-decoration: none;
+        }
+
+        #content section>div dl>dt a:hover {
+            color: #F33333;
+        }
+
+        #content section dl dt a:visited {
+            color: white;
+            text-decoration: none;
+        }
+
+        #content section div dl span a {
+            border: solid 1.5px white;
+            border-radius: 14px / 14px;
+            font-size: 12px;
+            font-family: notoR;
+            padding: 5px 13px;
+            text-decoration: none;
+        }
+
+        #content section div dl span a:visited {
+            color: white;
+        }
+
+        #content section div dl span a:hover {
+            color: #F33333;
+            border: solid 1.5px #F33333;
+            background: black;
+        }
+
+        #content>#net {
+            float: left;
+
+        }
+
+        #content>#net>img {
+            float: left;
+        }
+
+        #content>section>div {
+            width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #content h4 {
+            font-size: 16px;
+            font-family: notoB;
+        }
+
+        section .bg1,
+        section .bg2,
+        section .bg3 {
+            padding: 90px 0px;
+            background-color: #1D1D1D;
+            border-radius: 30px;
+        }
+
+        section>div h3 {
+            font-family: ugro;
+            font-size: 20px;
+            padding: 70px 0px 20px 0px;
+            margin: 0px 500px 50px 500px;
+            border-bottom: solid 1.5px #F33333;
+            letter-spacing: 5px;
+            color: #F33333;
+        }
+
+        section>div h3 span {
+            color: white;
+            font-size: 15px;
+            letter-spacing: 2px;
+        }
+
+        #content section #cast1,
+        #cast2,
+        #cast3 {
+            padding: 0px;
+        }
+
+        #content section #cast1 li {
+            float: left;
+            list-style: none;
+            width: 17%;
+            padding: 20px;
+        }
+
+        #content section #cast2 li {
+            float: left;
+            list-style: none;
+            width: 30%;
+            padding: 20px;
+        }
+
+        #content section #cast3 li {
+            float: left;
+            list-style: none;
+            width: 22%;
+            padding: 20px;
+        }
+
+        section dt {
+            font-family: ugro;
+            font-size: 16px;
+            color: #F33333;
+        }
+
+        #cast1 img,
+        #cast2 img,
+        #cast3 img {
+            transition: all 0.2s linear;
+        }
+
+        #cast1 img:hover,
+        #cast2 img:hover,
+        #cast3 img:hover {
+            transform: scale(1.2);
+        }
+
+        section #cast1 dd,
+        #cast2 dd,
+        #cast3 dd {
+            font-family: notoR;
+            font-size: 14px;
+            padding: 0px 0px;
+            margin: 0px 0px;
+        }
+
+        #content section #info1,
+        #info2 {
+            float: right;
+            padding-top: 60px;
+            margin-right: 100px;
+            text-align: left;
+            width: 500px;
+        }
+
+        #content section #info3 {
+            float: right;
+            padding-top: 40px;
+            margin-right: 120px;
+            text-align: left;
+            width: 500px;
+        }
+
+        div iframe {
+            border-radius: 15px / 15px;
+            margin: 0px 20px;
+        }
+
+        #content #point {
+            margin: 100px 400px 50px 400px;
+            padding: 0px 50px;
+            border: solid 2px #F33333;
+            border-radius: 20px / 20px;
+            background-color: #1D1D1D;
+        }
+
+        #content #point h3 {
+            margin: 20px 20px 30px 20px;
+            padding-top: 20px;
+        }
+
+        #content #point p {
+            font-family: ugroB;
+            margin: 15px 0px;
+        }
+
+        input[id="box"],
+        input[id="box2"],
+        input[id="box3"] {
+            display: none;
+        }
+
+        input[id="box"]+label,
+        input[id="box2"]+label,
+        input[id="box3"]+label {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2.5px solid #F33333;
+            border-radius: 5px / 5px;
+            cursor: pointer;
+        }
+
+        input[id="box"]:checked+label,
+        input[id="box2"]:checked+label,
+        input[id="box3"]:checked+label {
+            background-color: #F33333;
+        }
+
+        .pt {
+            box-sizing: border-box;
+            margin: 10px 0px;
+            width: 0px;
+            height: 16px;
+            background-color: #F33333;
+            transition-property: all;
+            transition-duration: 1.3s;
+            transition-timing-function: ease;
+        }
+
+        .pt4,
+        .pt24,
+        .pt34 {
+            margin-bottom: 50px;
+        }
+
+        input:checked~.pt1 {
+            width: 100%;
+        }
+
+        input:checked~.pt2 {
+            width: 80%;
+        }
+
+        input:checked~.pt3 {
+            width: 40%;
+        }
+
+        input:checked~.pt4 {
+            width: 90%;
+        }
+
+        input:checked~.pt21 {
+            width: 30%;
+        }
+
+        input:checked~.pt22 {
+            width: 60%;
+        }
+
+        input:checked~.pt23 {
+            width: 100%;
+        }
+
+        input:checked~.pt24 {
+            width: 40%;
+        }
+
+        input:checked~.pt31 {
+            width: 50%;
+        }
+
+        input:checked~.pt32 {
+            width: 100%;
+        }
+
+        input:checked~.pt33 {
+            width: 80%;
+        }
+
+        input:checked~.pt34 {
+            width: 40%;
+        }
+
+        #rec {
+            margin-bottom: 50px;
+        }
+
+        #rec h3 {
+            color: white;
+            border-bottom: solid 1.5px white;
+            margin: 40px 100px;
+            padding: 20px 0px;
+        }
+
+        #rec ul {
+            padding: 0px 100px;
+        }
+
+        #rec div li {
+            list-style: none;
+            float: left;
+            width: 25%;
+            margin: 15px 0px;
+        }
+
+        #rec div img {
+            display: block;
+            width: 100%;
+            transition: all 0.1s linear;
+        }
+
+        .rec,
+        .rec2,
+        .rec3,
+        .rec4,
+        .rec5,
+        .rec6,
+        .rec7,
+        .rec8 {
+            position: relative;
+            overflow: hidden;
+            margin: 0px 15px;
+        }
+
+        .rec:hover img,
+        .rec2:hover img,
+        .rec3:hover img,
+        .rec4:hover img,
+        .rec5:hover img,
+        .rec6:hover img,
+        .rec7:hover img,
+        .rec8:hover img {
+            transform: scale(1.1);
+            opacity: 20%;
+        }
+
+        #rec .rec:hover .title1 {
+            top: 45%;
+        }
+
+        #rec .rec2:hover .title2 {
+            top: 45%;
+        }
+
+        #rec .rec3:hover .title3 {
+            top: 45%;
+        }
+
+        #rec .rec4:hover .title4 {
+            top: 45%;
+        }
+
+        #rec .rec5:hover .title5 {
+            top: 45%;
+        }
+
+        #rec .rec6:hover .title6 {
+            top: 45%;
+        }
+
+        #rec .rec7:hover .title7 {
+            top: 45%;
+        }
+
+        #rec .rec8:hover .title8 {
+            top: 45%;
+        }
+
+        #rec .rec .title1,
+        .title2,
+        .title3,
+        .title4,
+        .title5,
+        .title6,
+        .title7,
+        .title8 {
+            left: 83px;
+            right: 83px;
+            z-index: 2;
+            position: absolute;
+            color: white;
+            letter-spacing: 4px;
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 20px;
+            font-weight: 900;
+            font-family: notoB;
+            transition: all .35s;
+        }
+
+        /* -------body------- */
+        footer {
+            background-color: #1D1D1D;
+            color: #9D9D9D;
+            padding: 10px 0px 20px 20px;
+        }
+
+        footer #f_left {
+            float: left;
+            padding: 10px 0px;
+            text-align: left;
+            font-family: notoR;
+            font-size: 11px;
+        }
+
+        #f_left P {
+            margin: 0px;
+        }
+
+        footer ul {
+            padding: 0px 0px;
+            margin: 5px 0px 0px 0px;
+        }
+
+        footer ul>li {
+            float: left;
+            margin-right: 10px;
+            list-style: none;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header class="clearfix">
+            <h1 class="header_content"><a href="./index.html"><img src="./image/logo2.png" height="80px" /></a></h1>
+            <ul class="header_content clearfix">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./layout1.html">Layout1</a></li>
+                <li><a href="./layout2.html">Layout2</a></li>
+                <li><a href="./layout3.html">Layout3</a></li>
+                <li><a href="./layout_sample.html">Free Layout</a></li>
+            </ul>
+        </header>
+        <nav>
+            <ul id="pixlist" class="clearfix">
+                <li><a href="#netflix">Netflix</a></li>
+                <li><a href="#cont1">별나도 괜찮아</a></li>
+                <li><a href="#cont2">마인드 헌터</a></li>
+                <li><a href="#cont3">더 폴리티션</a></li>
+            </ul>
+        </nav>
+        <div id="content">
+            <section>
+                <div class="clearfix">
+                    <a name="netflix"></a>
+                    <div id="net">
+
+                        <dl>
+                            <dt><a href="https://www.netflix.com/" target="_blank">Netflix</a></dt>
+                            <dd>
+                                국내에서 잘 알려진 OTT 서비스로, 인터넷(net)+영화(flicks) 의 합성어이다.
+                                영화와 드라마, TV 프로그램, 다큐멘터리, 애니메이션 등의 매우 다양한 장르의
+                                컨텐츠들을 언제, 어디서나, 무제한으로 모든 기기에서 볼 수 있는 플랫폼이다.
+                            </dd>
+                            <span><a href="https://www.netflix.com/" target="_blank">더 알아보기 ></a></span>
+                        </dl>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <a name="cont1"></a> <!-- 스크롤 위치 -->
+                    <br>
+                    <h3 style="border-bottom: none; margin-bottom: 0px; padding-bottom: 0px; font-size: 25px;">&lt;별나도
+                        괜찮아 <span> (Atypical)</span> ></h3></br>
+                    <div class="bg1">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMjNjNThmYTUtMjY2Ni00OGE4LTgzOTItYTgzMDllNDM5NTI5XkEyXkFqcGdeQXVyNjEwNTM2Mzc@._V1_FMjpg_UX1000_.jpg"
+                            width="280px" height="375px" style="border-radius: 15px;" />
+                        <div id="info1" class="clearfix">
+                            <h4>Creator</h4>
+                            <p>Robia Rashid</p>
+                            <h4>Storyline</h4>
+                            <p>Atypical is a coming-of-age story that follows Sam,
+                                an 18-year-old on the autistic spectrum as he searches for love and independence.
+                                While Sam is on his funny yet emotional journey of self-discovery,
+                                the rest of his family must grapple with change in their own lives as they
+                                all struggle with the central theme: what does it really mean to be normal?</p>
+                        </div>
+                    </div>
+                    <h3>Cast</h3>
+                    <ul id="cast1" class="clearfix">
+                        <li>
+                            <img src="./image/s1cast1.png" width="130px" />
+                            <dl>
+                                <dt>샘 가드너</dt>
+                                <dd>키어 길크리스트 (Keir Gilchrist)</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="./image/s1cast2.png" width="130px" />
+                            <dl>
+                                <dt>케이시 가드너</dt>
+                                <dd>브리젯 런디페인 (Brigette Lundy-Paine)</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="./image/s1cast3.png" width="130px" />
+                            <dl>
+                                <dt>엘사 가드너</dt>
+                                <dd>제니퍼 제이슨 리 (Jennifer Jason Leigh)</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="./image/s1cast4.png" width="130px" />
+                            <dl>
+                                <dt>더그 가드너</dt>
+                                <dd>마이클 래퍼포트 (Michael Rapaport)</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="./image/s1cast5.png" width="130px" />
+                            <dl>
+                                <dt>이지</dt>
+                                <dd>피벨 스튜어트 (Fivel Stewart)</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <div id="point">
+                        <h3>감상 포인트 보기 </h3>
+                        <input type="checkbox" id="box" />
+                        <label for="box"></label>
+                        <p>감동</p>
+                        <div class="pt pt1"></div>
+                        <p>캐릭터 케미</p>
+                        <div class="pt pt2"></div>
+                        <p>스토리 라인</p>
+                        <div class="pt pt3"></div>
+                        <p>힐링</p>
+                        <div class="pt pt4"></div>
+                    </div>
+                    <div>
+                        <h3>Trailer</h3>
+                        <div class="tra">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/4B5zkpqnnFA"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/MY8qiuMTX30"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <br />
+            <br />
+            <section>
+                <div>
+                    <a name="cont2"></a> <!-- 스크롤 위치 -->
+                    <br>
+                    <h3 style="border-bottom: none; margin-bottom: 0px; padding-bottom: 0px; font-size: 25px;">&lt;마인드
+                        헌터<span> (Mind Hunter)</span> ></h3></br>
+                    <div class="bg2">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNWNmYzQ1ZWUtYTQ3ZS00Y2UwLTlkMDctZThlOTJkMGJiNzBiXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_.jpg"
+                            width="300px" height="375px" style="border-radius: 15px;" />
+                        <div id="info2" class="clearfix">
+                            <h4>Creator</h4>
+                            <p>Joe Penhall</p>
+                            <h4>Storyline</h4>
+                            <p>Two FBI agents, fighting the departmental stigma of backroom boys -
+                                those who try to complicate the status quo of simple Means, Motive, Opportunity (MMO)
+                                of crime-solving with academics - work to develop an innovative investigative field
+                                incorporating psychology,
+                                anthropology and sociology as a method to reveal the motive</p>
+                        </div>
+                    </div>
+                    <h3>Cast</h3>
+                    <ul id="cast2" class="clearfix">
+                        <li>
+                            <img src="./image/s2cast1.png" width="130px" />
+                            <dl>
+                                <dt>홀든 포드</dt>
+                                <dd>조나단 그로프 (Jonathan Groff)</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="./image/s2cast2.png" width="130px" />
+                            <dl>
+                                <dt>빌 텐치</dt>
+                                <dd>홀트 매캘러니 (Holt McCallany)</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="./image/s2cast3.png" width="130px" />
+                            <dl>
+                                <dt>웬디</dt>
+                                <dd>애나 토브 (Anna Torv)</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <div id="point">
+                        <h3>감상 포인트 보기</h3>
+                        <input type="checkbox" id="box2" />
+                        <label for="box2"></label>
+                        <p>감동</p>
+                        <div class="pt pt21"></div>
+                        <p>캐릭터 케미</p>
+                        <div class="pt pt22"></div>
+                        <p>스토리 라인</p>
+                        <div class="pt pt23"></div>
+                        <p>힐링</p>
+                        <div class="pt pt24"></div>
+                    </div>
+                    <div>
+                        <h3>Trailer</h3>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/TO28fzf2TuE"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Cd79LUQE7-0"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+            <br />
+            <br />
+            <section>
+                <div>
+                    <a name="cont3"></a> <!-- 스크롤 위치 -->
+                    <br>
+                    <h3 style="border-bottom: none; margin-bottom: 0px; padding-bottom: 0px; font-size: 25px;">&lt;더
+                        폴리티션<span> (The politician)</span> ></h3></br>
+                    <div class="bg3">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMzk1Yzg4MmEtODFjNS00NzE1LWEzMDItNjhiMmRlYTZhN2U5XkEyXkFqcGdeQXVyMTAxOTg0NDc3._V1_.jpg"
+                            width="300px" height="auto" style="border-radius: 15px;" />
+                        <div id="info3" class="clearfix">
+                            <h4>Creators</h4>
+                            <p>Ian Brennan, Brad Falchuk, Ryan Murphy</p>
+                            <h4>Storyline</h4>
+                            <p>Payton Hobart (Ben Platt), from Santa Barbara, California, is a wealthy student
+                                who has wanted to be the President of the United States since he was seven years old.
+                                But first he had to get through the most dangerous political hurdle of all: Saint
+                                Sebastian
+                                High School. In order to be the President of the Student Body, study at Harvard and
+                                continue on his path to extraordinary success,</p>
+                        </div>
+                    </div>
+                    <h3>Cast</h3>
+                    <ul id="cast3" class="clearfix">
+                        <li>
+                            <img src="./image/s3cast1.png" width="130px" />
+                            <dl>
+                                <dt>페이튼 호바트</dt>
+                                <dd>벤 플랫 (Ben Plattt)</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="./image/s3cast2.png" width="130px" />
+                            <dl>
+                                <dt>리버</dt>
+                                <dd>데이비드 코런스웻 (David Corenswet)</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="./image/s3cast3.png" width="130px" />
+                            <dl>
+                                <dt>아스트리드</dt>
+                                <dd>루시 보인턴 (Lucy Boynton)</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="./image/s3cast4.png" width="130px" />
+                            <dl>
+                                <dt>인피니티 잭슨</dt>
+                                <dd>조이 도이치 (Zoey Deutch)</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <div id="point">
+                        <h3>감상 포인트 보기</h3>
+                        <input type="checkbox" id="box3" />
+                        <label for="box3"></label>
+                        <p>감동</p>
+                        <div class="pt pt31"></div>
+                        <p>캐릭터 케미</p>
+                        <div class="pt pt32"></div>
+                        <p>스토리 라인</p>
+                        <div class="pt pt33"></div>
+                        <p>힐링</p>
+                        <div class="pt pt34"></div>
+                    </div>
+                    <div>
+                        <h3>Trailer</h3>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/wFm_oTcY1r4"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/xKaCerqc0VQ"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+            <br />
+            <br />
+            <section id="rec">
+                <h3>다른 작품 더 알아보기</h3>
+                <ul class="clearfix">
+                    <div>
+                        <li>
+                            <div class="rec"><a href="https://www.imdb.com/title/tt10098620/" target="_blank">
+                                    <img src="./image/re1.jpg" /></a>
+                                <div class="title title1">필 굿</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rec2"><a href="https://www.imdb.com/title/tt9421570/" target="_blank">
+                                    <img src="./image/re2.jpg" /></a>
+                                <div class="title title2">더 길티</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rec3"><a href="https://www.imdb.com/title/tt11286314/" target="_blank">
+                                    <img src="./image/re3.jpg" /></a>
+                                <div class="title title3">돈룩업</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rec4"><a href="https://www.imdb.com/title/tt6474378/" target="_blank">
+                                    <img src="./image/re4.jpg" /></a>
+                                <div class="title title4">굿걸스</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rec5"><a href="https://www.imdb.com/title/tt6468322/" target="_blank">
+                                    <img src="./image/re5.jpg" /></a>
+                                <div class="title title5">종이의 집</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rec6"><a href="https://www.imdb.com/title/tt7520794/" target="_blank">
+                                    <img src="./image/re6.jpg" /></a>
+                                <div class="title title6">러시아 인형처럼</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rec7"><a href="https://www.imdb.com/title/tt1312171/" target="_blank">
+                                    <img src="./image/re7.jpg" /></a>
+                                <div class="title title7">엄브렐라 아카데미</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rec8"><a href="https://www.imdb.com/title/tt1327801/" target="_blank">
+                                    <img src="./image/re8.jpg" /></a>
+                                <div class="title title8">글리</div>
+                            </div>
+                        </li>
+                    </div>
+                </ul>
+            </section>
+        </div>
+        <footer class="clearfix">
+            <div id="f_left">
+                <img src="" />
+                <p>CONTACT</p>
+                <ul class="clearfix">
+                    <li><img src="./image/icon1.png" height="20px" /></li>
+                    <li><img src="./image/icon2.png" height="17px" /></li>
+                    <li><img src="./image/icon3.png" height="18px" /></li>
+                </ul>
+                <p>ⓒ YoonA Kim. All Rights Reserved</p>
+                <p>the loges in the design are the property of their
+                    respective owners/copyright holders.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

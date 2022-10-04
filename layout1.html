@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>레이아웃1</title>
+        <meta charset="utf-8" />
+        <style>
+            #wrap{
+                min-width: 1024px; /* 최소-넓이: 1024 픽셀, 화면 작아질 때 형태가 찌그러지고 삐져 나오는 것 방지 */
+                /* 최소 nnn px 이하는 안된다 */
+                max-width: 1920px; /* 최대-넓이: 1920픽셀 FHD, 그 이상 화면이 커져도 콘텐츠 크기 유지  */
+                margin-left: auto;
+                margin-right: auto;
+            }
+            header, nav, footer{
+                padding: 5px 20px;
+            }
+            header>h1{
+                margin: 0px; /* 자동설정된 마진 제거 */
+            }
+            header>ul{
+                margin: 11px 80px; /* 상하, 좌우 */
+            }
+            header>div{
+                margin: 11px;
+            }
+            header>ul>li{
+                float: left; /* 둥둥떠다니다: 왼쪽방향 */
+                list-style: none;
+                border-right: solid 2px gray;
+                 /* padding은 (border의) 안쪽 여백, margin은 (border의) 바깥쪽 여백 */
+                padding: 0px 20px; /* 상하, 좌우 */
+            }
+            header>ul>li:last-child{
+                border: none; /* contact us 뒤에 나오는 border 제거 */
+            }
+            .clearfix::after{ /* li 요소만 적용시킴, ul이 다시 li를 자식개체로 감싸게 됨 */
+                content: "";
+                clear:both; /* float 해체: 양쪽 */
+                display: table;
+            }
+            .header_content{
+                float: left;
+            }
+            nav>ul>li{ /* > 는 자식선택자(바로 직속 관계만 해당) */
+                float: left;
+                list-style: none;
+                padding: 0px 10px; /* 경계선 없기 때문에 margin padding 결과 같음 */
+            }
+            nav{
+                background-color: #ddd;            }
+            nav h2{ /* 뛰어쓰기는 하위선택자 */
+                float: left;
+            }
+            nav ul{
+                float: right;
+                margin: 25px 0px;
+            }
+            a{
+                color: gray;
+                text-decoration: none;
+            }
+            a:hover{
+                color: #375f72;
+            }
+            #content section{ /* h3에 생기는 기본 마진 패딩으로 채워서 여백 제거 */
+                padding: 30px 0px;
+            }
+            #content section:nth-child(1){
+                background-color: #98f;
+            }
+            #content section:nth-child(2){
+                background-color: #5d9;
+            }
+            #content section:nth-child(3){
+                background-color: #f76;
+            }
+            #content section:nth-child(4){
+                background-color: #ec5;
+            }
+            #content section>div>div{
+                width: 480px;
+                padding: 10px;
+            }
+            #content h3{
+                color: white;
+            }
+            #content dt{
+                font-weight: bold;
+                font-size: 20px;
+                margin: 15px 0px;
+            }
+            #content dd{
+                margin: 0px;
+            }
+            #content>section>div>div{
+                float: left;
+            }
+            #content>section>div{
+                width: 1000px; /* 두 개의 사진 콘텐츠가 500씩이기 때문에 더해서 1000 */
+                margin-left: auto; /* 넓이 설정 후에 마진 자동 설정 */
+                margin-right: auto;
+            }
+            footer{
+                background-color: #333;
+                color: #ccc;
+
+            }
+            footer ul{
+                padding: 0px;
+            }
+            footer li{
+                list-style: none;
+                float: left;
+                padding: 0px 10px; /* 상하 좌우 */
+            }
+            #footer_left{ float: left;}
+            #footer_right{ float: right;}
+            #footer_left li{ /* footer #footer_left li, footer div-child(1) li 3가지 모두 가능, 동일한 선택지 */
+                border-right: solid 1px #ccc;
+            }
+            #footer_left li:last-child{
+                border: none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header class="clearfix">
+                <h1 class="header_content"><img src="./layout1_image/layout1_head_logo.jpg " /></h1>
+                <ul class="header_content clearfix"> <!-- class명 중복 시 뛰어쓰기 중요 -->
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="./layout1.html">LAYOUT1</a></li>
+                    <li><a href="./layout2.html">LAYOUT2</a></li>
+                    <li><a href="./layout3.html">LAYOUT3</a></li>
+                    <li><a href="./layout_sample.html">FREE LAYOUT</a></li>
+                </ul>
+                <div class="header_content">
+                    <img src="./layout1_image/layout1_head_zoom.jpg" />
+                </div>
+            </header>
+            <nav class="clearfix">
+                <h2>See Our Works</h2>
+                <ul>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Icons</a></li>
+                    <li><a href="#">Illustrations</a></li>
+                    <li><a href="#">Misc</a></li>
+                </ul>
+            </nav>
+            <div id="content">
+                <section>
+                    <div class="clearfix">
+                        <h3>Web Design</h3>
+                        <div>
+                            <img src="./layout1_image/layout1_img1.jpg" />
+                            <dl>
+                                <dt>Lorem ipsum dolor sit amet</dt>
+                                <dd>Consectetur adipiscing elit. 
+                                    Suspendisse sed leo tellus. 
+                                    Praesent nec vehicula ligula, 
+                                    non laoreet ligula. Maecenas at massa eget orci porttitor semper.</dd>
+                            </dl>
+                        </div>
+                        <div>
+                            <img src="./layout1_image/layout1_img2.jpg" />
+                            <dl>
+                                <dt>Lorem ipsum dolor sit amet</dt>
+                                <dd>Consectetur adipiscing elit. 
+                                    Suspendisse sed leo tellus. 
+                                    Praesent nec vehicula ligula, 
+                                    non laoreet ligula. Maecenas at massa eget orci porttitor semper.</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div  class="clearfix">
+                    <h3>Icons</h3>
+                        <div>
+                            <img src="./layout1_image/layout1_img3.jpg" />
+                            <dl>
+                                <dt>Lorem ipsum dolor sit amet</dt>
+                                <dd>Consectetur adipiscing elit. 
+                                    Suspendisse sed leo tellus. 
+                                    Praesent nec vehicula ligula, 
+                                    non laoreet ligula. Maecenas at massa eget orci porttitor semper.</dd>
+                            </dl>
+                        </div>
+                        <div>
+                            <img src="./layout1_image/layout1_img4.jpg" />
+                            <dl>
+                                <dt>Lorem ipsum dolor sit amet</dt>
+                                <dd>Consectetur adipiscing elit. 
+                                    Suspendisse sed leo tellus. 
+                                    Praesent nec vehicula ligula, 
+                                    non laoreet ligula. Maecenas at massa eget orci porttitor semper.</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="clearfix">
+                        <h3>Illustrations</h3>
+                        <div>
+                            <img src="./layout1_image/layout1_img5.jpg" />
+                            <dl>
+                                <dt>Lorem ipsum dolor sit amet</dt>
+                                <dd>Consectetur adipiscing elit. 
+                                    Suspendisse sed leo tellus. 
+                                    Praesent nec vehicula ligula, 
+                                    non laoreet ligula. Maecenas at massa eget orci porttitor semper.</dd>
+                            </dl>
+                        </div>
+                        <div>
+                            <img src="./layout1_image/layout1_img6.jpg" />
+                            <dl>
+                                <dt>Lorem ipsum dolor sit amet</dt>
+                                <dd>Consectetur adipiscing elit. 
+                                    Suspendisse sed leo tellus. 
+                                    Praesent nec vehicula ligula, 
+                                    non laoreet ligula. Maecenas at massa eget orci porttitor semper.</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="clearfix">
+                        <h3>Misc</h3>
+                        <div>
+                            <img src="./layout1_image/layout1_img7.jpg" />
+                            <dl>
+                                <dt>Lorem ipsum dolor sit amet</dt>
+                                <dd>Consectetur adipiscing elit. 
+                                    Suspendisse sed leo tellus. 
+                                    Praesent nec vehicula ligula, 
+                                    non laoreet ligula. Maecenas at massa eget orci porttitor semper.</dd>
+                            </dl>
+                        </div>
+                        <div>
+                            <img src="./layout1_image/layout1_img8.jpg" />
+                            <dl>
+                                <dt>Lorem ipsum dolor sit amet</dt>
+                                <dd>Consectetur adipiscing elit. 
+                                    Suspendisse sed leo tellus. 
+                                    Praesent nec vehicula ligula, 
+                                    non laoreet ligula. Maecenas at massa eget orci porttitor semper.</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <footer class="clearfix"> <!-- 배경컬러 납작해져서 나오는 것 방지 -->
+                <div id="footer_left">
+                    <ul class="clearfix">
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Services</li>
+                        <li>Work</li>
+                        <li>Blog</li>
+                        <li>Contact us</li>
+                    </ul>
+                    <p>ⓒ 2013 BlueBox. All Right Reserved</p>
+                    <p>the loges in the design are the property of their 
+                        respective owners/copyright holders.</p>
+                </div>
+                <div id="footer_right">
+                    <ul class="clearfix"> <!-- footer가 납작해져서 밖으로 밀려나지 않게 ul마다 clearfix -->
+                        <li><img src="./layout1_image/layout1_footer_icon1.png" /></li>
+                        <li><img src="./layout1_image/layout1_footer_icon2.png" /></li>
+                        <li><img src="./layout1_image/layout1_footer_icon3.png" /></li>
+                        <li><img src="./layout1_image/layout1_footer_icon4.png" /></li>
+                        <li><img src="./layout1_image/layout1_footer_icon5.png" /></li>
+                        <li><img src="./layout1_image/layout1_footer_icon6.png" /></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
